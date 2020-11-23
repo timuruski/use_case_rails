@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+method="$(echo $1 | tr '[:lower:]' '[:upper:]')"
+path="/${2#/}"
+shift 2
+
+curl --silent --request "${method}" "localhost:5000${path}" $@ 
